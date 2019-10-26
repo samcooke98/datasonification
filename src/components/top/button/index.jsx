@@ -9,18 +9,24 @@ const StyledClick = styled(Button)`
   outline: none;
   padding: 20px 20px;
   border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5c75a;
+  }
 `;
 
 const Click = () => {
   return (
-    <StyledClick
-      type="primary"
-      onClick={() => {
-        makeRequest().then(console.log);
-      }}
-    >
-      Get Train Timetable
-    </StyledClick>
+    <div className="btn">
+      <StyledClick
+        type="primary"
+        onClick={() => {
+          makeRequest().then(console.log);
+        }}
+      >
+        Get Train Timetable
+      </StyledClick>
+    </div>
   );
 };
 
