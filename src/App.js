@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React Penny
-        </a>
-      </header>
-    </div>
-  );
+//Components
+import TopSection from "./components/top/";
+
+//creating a Functional Component
+class App extends Component {
+  render() {
+    return (
+      <div className="web-container">
+        <div className="app-container">
+          <div className="searchbar-section">
+            <TopSection />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
