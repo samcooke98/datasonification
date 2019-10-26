@@ -15,13 +15,20 @@ const StyledClick = styled(Button)`
   }
 `;
 
-const Click = () => {
+const Click = ({ onRequestComplete }) => {
+  const [isSubmitting, setSubmitting ] = React.useState(false);
+
   return (
     <div className="btn">
       <StyledClick
+        disabled={isSubmitting}
         type="primary"
         onClick={() => {
-          makeRequest().then(console.log);
+          setSubmitting(true);
+          makeRequest().then((data) => {
+            onRequestComplete(data);
+            setSubmitting(false);
+          });
         }}
       >
         Get Train Timetable

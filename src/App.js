@@ -11,11 +11,18 @@ class App extends Component {
       <div className="web-container">
         <div className="app-container">
           <div className="searchbar-section">
-            <TopSection />
+            <TopSection onRequestComplete={this.c} />
           </div>
         </div>
       </div>
     );
+  }
+
+  onRequestComplete = (data) => {
+    console.log(data);
+    this.setState({
+      data
+    })
   }
 }
 

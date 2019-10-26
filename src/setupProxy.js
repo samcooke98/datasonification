@@ -1,4 +1,6 @@
-const API_KEY = "vJCjkbsGKCdcukot4WQf43aXpNwOvtfZ97Js";
+require('dotenv').config({});
+
+const API_KEY = process.env.API_KEY;
 const proxy = require("http-proxy-middleware");
 
 module.exports = function(app) {
